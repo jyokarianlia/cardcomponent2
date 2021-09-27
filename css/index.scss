@@ -35,13 +35,15 @@ body {
     .card {
         margin: 5em 1.3em;
         border-radius: 7px;
+        overflow: hidden;
         background-color: $Dark-desaturated-blue-card-background;
+
         .cont-img {
-            overflow: hidden;
             background-image: url("../images/image-header-mobile.jpg");
+            background-color: $Soft-violet-accent;
             background-size: cover;
-            width: 100%;
-            height: 200px;
+            background-blend-mode: overlay;
+            height: 16em;
         }
 
         .cont-info {
@@ -69,21 +71,80 @@ body {
                 margin-top: 3em;
                 div {
                     margin: 1.7em 0;
+                
+                    p {
+                        margin-top: -.1em;
+                        text-transform: uppercase;
+                        font-family: $font-family-lexend;
+                        font-weight: 400;
+                        color: $Slightly-transparent-white-stat-headings;
+
+                        span {
+                            font-size: 1.5em;
+                            font-family: $font-family-inter;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            color: $White-main-heading-stats;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 500px) {
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+            display: flex;
+            flex-direction: row-reverse;
+            margin: 2em 0;
+
+            .cont-img, .cont-info {
+                flex: 1;
+            }
+
+            .cont-img {
+                background-image: url("../images/image-header-desktop.jpg");
+                height: auto;
+            }
+
+            .cont-info {
+                margin-top: 1.8em;
+                text-align: left !important;
+
+                h2 {
+                    font-size: 2.5em;
+                    margin: .5em .8em;
+                    margin-bottom: .8em;
+                    br {
+                        display: none;
+                    }
                 }
 
-                span {
-                    font-size: 1.5em;
-                    font-family: $font-family-inter;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                }
-                
                 p {
-                    margin-top: -.1em;
-                    text-transform: uppercase;
-                    font-family: $font-family-lexend;
-                    font-weight: 400;
-                    color: $Slightly-transparent-white-stat-headings;
+
+                    span {
+                        color: $White-main-heading-stats;
+                    }
+                }
+
+                .cont {
+                    display: flex;
+                    justify-content: space-around;
+
+                    div {
+                        p {
+                            font-size: .75em;
+
+                            span {
+                                font-size: 2em;
+                            }
+                        }
+                    }
                 }
             }
         }

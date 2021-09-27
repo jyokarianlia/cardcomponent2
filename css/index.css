@@ -34,15 +34,16 @@ body {
 .content-flex .card {
   margin: 5em 1.3em;
   border-radius: 7px;
+  overflow: hidden;
   background-color: #1b1938;
 }
 
 .content-flex .card .cont-img {
-  overflow: hidden;
   background-image: url("../images/image-header-mobile.jpg");
+  background-color: #aa5cdb;
   background-size: cover;
-  width: 100%;
-  height: 200px;
+  background-blend-mode: overlay;
+  height: 16em;
 }
 
 .content-flex .card .cont-info {
@@ -75,18 +76,79 @@ body {
   margin: 1.7em 0;
 }
 
-.content-flex .card .cont-info .cont span {
-  font-size: 1.5em;
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.content-flex .card .cont-info .cont p {
+.content-flex .card .cont-info .cont div p {
   margin-top: -.1em;
   text-transform: uppercase;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.content-flex .card .cont-info .cont div p span {
+  font-size: 1.5em;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+}
+
+@media (min-width: 500px) {
+  .content-flex {
+    width: 100vw;
+    height: 100vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .content-flex .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    margin: 2em 0;
+  }
+  .content-flex .card .cont-img, .content-flex .card .cont-info {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .content-flex .card .cont-img {
+    background-image: url("../images/image-header-desktop.jpg");
+    height: auto;
+  }
+  .content-flex .card .cont-info {
+    margin-top: 1.8em;
+    text-align: left !important;
+  }
+  .content-flex .card .cont-info h2 {
+    font-size: 2.5em;
+    margin: .5em .8em;
+    margin-bottom: .8em;
+  }
+  .content-flex .card .cont-info h2 br {
+    display: none;
+  }
+  .content-flex .card .cont-info p span {
+    color: white;
+  }
+  .content-flex .card .cont-info .cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .content-flex .card .cont-info .cont div p {
+    font-size: .75em;
+  }
+  .content-flex .card .cont-info .cont div p span {
+    font-size: 2em;
+  }
 }
 /*# sourceMappingURL=index.css.map */
